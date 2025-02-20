@@ -3,3 +3,33 @@
 @theme {
     --color-amazon_blue: #131921;
   }
+
+  @keyframes dropdown-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes dropdown-exit {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+
+  .dropdown-enter {
+    animation: dropdown-enter 0.3s ease-out ;
+  }
+
+  .dropdown-exit {
+    animation: dropdown-exit 0.3s ease-in forwards;
+  }
