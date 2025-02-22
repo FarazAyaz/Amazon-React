@@ -33,3 +33,34 @@
   .dropdown-exit {
     animation: dropdown-exit 0.3s ease-in forwards;
   }
+
+  @keyframes sideBar-enter {
+    0% { 
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes sideBar-exit {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+  }
+  
+  .sideBar-enter {
+    animation: sideBar-enter 0.3s ease-out forwards;
+  }
+  
+  .sideBar-exit {
+    animation: sideBar-exit 0.3s ease-in forwards;
+  }
+  
