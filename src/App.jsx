@@ -1,9 +1,13 @@
 
+import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
 function App() {
   return (
-    <div >
+    <div>
       <Navbar/>
+      <div className="max-w-[1440px] mx-auto">
+      <Hero/>
+      </div>
     </div>
   );
 }
