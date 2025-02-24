@@ -1,9 +1,10 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { images } from '../assets';
+
 import { CustomRightArrow } from '../components/Hero/CustomRightArrow';
 import { CustomLeftArrow } from '../components/Hero/CustomLeftArrow';
+import { images } from '../assets/banner';
 
 const responsive = {
     superLargeDesktop: {
@@ -26,12 +27,12 @@ const responsive = {
   };
 const Hero = () => {
   return (
-    <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={2000}  keyBoardControl={true} customRightArrow={<CustomRightArrow/>} customLeftArrow={<CustomLeftArrow/>}>
-    <img src={images.bannerimgFive} alt="" className='w-full h-[600px] object-cover'/>
-    <img src={images.bannerimgTwo} alt="" className='w-full h-[600px] object-cover'/>
-    <img src={images.bannerimgThree} alt="" className='w-full h-[600px] object-cover'/>
-    <img src={images.bannerimgFour} alt="" className='w-full h-[600px] object-cover'/>
-    <img src={images.bannerimgone} alt="" className='w-full h-[600px] object-cover'/> 
+    <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={2000}  keyBoardControl={true} customRightArrow={<CustomRightArrow/>} customLeftArrow={<CustomLeftArrow/>} className='z-0'>
+    <img src={images.banner1} alt="" className='w-full h-[600px] object-cover'/>
+    <img src={images.banner2} alt="" className='w-full h-[600px] object-cover'/>
+    <img src={images.banner3} alt="" className='w-full h-[600px] object-cover'/>
+    <img src={images.banner4} alt="" className='w-full h-[600px] object-cover'/>
+    <img src={images.banner5} alt="" className='w-full h-[600px] object-cover'/> 
   </Carousel>
   )
 }
