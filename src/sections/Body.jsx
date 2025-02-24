@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../components/Body/ProductCard";
-const productsArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
 const Body = () => {
+  const [products,setProducts] = useState([])
+
+ const fetchData = async () => {
+ const res =  await fetch("https://fakestoreapi.com/products")
+ const data = await res.json()
+ setProducts(data)
+ }
+
+ useEffect(()=>{
+  fetchData()
+ },[])
+
   return (
     <div className="mt-[-150px] z-20 relative">
       {/* display all the products */}
       <div className="grid grid-cols-4 gap-4">
-        {productsArray.map((pro, i) => (
-          
-            <ProductCard />
+      {
+        products.map((productDetails,index)=>(
+          <ProductCard key={index} title={productDetails.title} description={productDetails.description} img={productDetails.image} price={productDetails.price} />
+        ))
+      }    
          
-        ))}
+         
+       
       </div>
     </div>
   );
