@@ -54,12 +54,16 @@ const Search = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
             exit={{ opacity: 0, y: -50 }}
-            className="bg-slate-200 h-[200px] w-[200px] rounded-xl shadow-lg absolute top-[65px] p-6 z-20"
+            className="bg-white w-[200px] rounded-xl shadow-lg absolute top-[65px] p-6 z-20"
           >
-            <p className="px-4 py-2 text-gray-700 hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Watches</p>
-            <p className="px-4 py-2 text-gray-700 hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Clothes</p>
-            <p className="px-4 py-2 text-gray-700 hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Toys</p>
-            <p className="px-4 py-2 text-gray-700 hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Accessories</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Watches</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Clothes</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Toys</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Cosmetics</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Computers</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">CD & DVd</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Smart Phones</p>
+            <p className="px-4 py-2 text-black hover:bg-gray-300 rounded-md cursor-pointer duration-500 font-bold">Books</p>
           </motion.div>
         )}
       </AnimatePresence>
