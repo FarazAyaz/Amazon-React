@@ -17,10 +17,6 @@ const Body = () => {
 
  console.log("products",products)
 
-
-  const array = [{id:1,name:"faraz",age:23},{id:1,name:"ahmed",age:23},{id:1,name:"furqan",age:23},{id:1,name:"hamza",age:23},{id:1,name:"Ali",age:23}]
-  const returnedArray = array.map((itemDetails) => {
-    console.log(itemDetails)
   })
   
   return (
