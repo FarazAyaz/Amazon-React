@@ -2,7 +2,7 @@ import { CiLocationOn } from "react-icons/ci";
 
 const DeliveredLocation = () => {
   return (
-      <div className="xl:flex gap-1 items-center">
+      <div className="xl:flex gap-1 items-center cursor-pointer">
             <div className="self-end">
               <CiLocationOn className="size-6 text-white" />
             </div>

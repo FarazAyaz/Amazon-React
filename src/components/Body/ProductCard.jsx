@@ -1,5 +1,5 @@
 import React from 'react'
-import { images } from '../../assets/banner'
+
 
 
 const ProductCard = ({title,description,price,img}) => {
@@ -19,7 +19,7 @@ const ProductCard = ({title,description,price,img}) => {
     <h3 className='font-medium line-clamp-3'>{description}</h3>
     </div>
     {/* add to cart button */}
-    <button className='font-bold bg-yellow-400 rounded-lg cursor-pointer w-full py-2 mt-8'>Add To Cart</button>
+    <button className='font-bold bg-yellow-300 rounded-lg cursor-pointer w-full py-2 mt-8'>Add To Cart</button>
     </div>
     </div>
   )
