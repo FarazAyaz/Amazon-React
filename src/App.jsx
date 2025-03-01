@@ -1,8 +1,9 @@
 
 import Body from "./sections/Body";
+import Footer from "./sections/footer";
 import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
-import footer from "./sections/footer";
+
 function App() {
   return (
     <div>
@@ -10,8 +11,8 @@ function App() {
       <div className="max-w-[1440px] mx-auto">
       <Hero/>
       <Body/>
-      <footer/>
       </div>
+      <Footer/>
     </div>
   );
 }
