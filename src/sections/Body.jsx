@@ -27,8 +27,7 @@ const Body = () => {
         </div>
       ) : (
         <div className="grid grid-cols-4 gap-4">
-          {products.map((productDetails, index) => {
-            console.log(productDetails)
+          {products.slice(1,products.length).map((productDetails, index) => {
             return (
               <ProductCard
                 key={index}
