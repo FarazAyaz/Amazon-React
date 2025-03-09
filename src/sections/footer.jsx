@@ -73,9 +73,9 @@ const Footer = () => {
           </div>  
           <div class="flex justify-center mt-16 gap-4 items-center">
           <div class="border border-2 border-white text-white font-bold h-fit p-4">
-           <p class="text-xs">ENGLISH</p> 
+           <p class="text-xs cursor-pointer">ENGLISH</p> 
           </div>
-          <div class="text-white border border-2 border-white h-fit flex gap-3 p-4 items-center">
+          <div class="text-white border border-2 border-white h-fit flex gap-3 p-4 items-center cursor-pointer">
             <p>PAKISTAN</p>
           </div>
           
