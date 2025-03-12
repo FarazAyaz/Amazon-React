@@ -20,7 +20,7 @@ const NavBarBottom = () => {
       <h1 className='hover:font-bold text-white hover:border hover:border-white cursor-pointer'>Customer Service</h1>
       <h1 className='hover:font-bold text-white hover:border hover:border-white cursor-pointer'>Gift Card</h1>
       <h1 className='hover:font-bold text-white hover:border hover:border-white cursor-pointer'>Registry</h1>
-      <h1 className='hover:font-bold text-white hover:border hover:border-white cursor-pointer'>Sell</h1>
+      <h1 className='hover:font-bold text-white hover:border hover:border-white cursor-pointer'>Sell items</h1>
 
       {/* Sidebar */}
      
