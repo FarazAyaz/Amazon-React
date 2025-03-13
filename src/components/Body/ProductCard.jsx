@@ -4,7 +4,7 @@ import React from 'react'
 
 const ProductCard = ({title,description,price,img}) => {
   return (
-    <div className='bg-slate-100/30 shadow-md rounded-lg w-[350px] flex flex-col '>
+    <div className='bg-slate-100/30 shadow-md rounded-lg w-[350px] flex flex-col hover:shadow-xl transition duration-300 ease-in-out cursor-pointer'>
         <div className='bg-white rounded-tl-lg rounded-tr-lg p-8'>
         <img src={img} alt="" className='object-contain h-[200px] w-full rounded-tl-lg rounded-tr-lg'/>
         </div>
