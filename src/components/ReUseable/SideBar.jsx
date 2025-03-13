@@ -1,6 +1,7 @@
 import React from "react";
 import { IoCloseCircle } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
+import { NavLink } from "react-router";
 const SideBar = ({ showSideBar, setShowSideBar }) => {
   return (
     <AnimatePresence>
@@ -21,7 +22,9 @@ const SideBar = ({ showSideBar, setShowSideBar }) => {
               className="w-8 h-8 ml-auto"
               onClick={() => setShowSideBar(false)}
             />
-            <h1 className="font-bold p-3 bg-slate-300 rounded-md hover:bg-slate-400 border border-2 border-balck text-xl cursor-pointer">Sign In</h1>
+             <NavLink to={"/sign-in"} end>
+             <h1 className="font-bold p-3 bg-slate-300 rounded-md hover:bg-slate-400 border border-2 border-balck text-xl cursor-pointer">Sign In</h1>
+             </NavLink>
             <h1 className="font-bold p-3 bg-slate-300 rounded-md hover:bg-slate-400 cursor-pointer text-xl">Primary Section
             </h1>
                  <div className="space-y-2 cursor-pointer">

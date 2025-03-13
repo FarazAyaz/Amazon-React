@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { NavLink } from 'react-router'
 const Footer = () => {
   return (
     <div>
@@ -8,10 +8,11 @@ const Footer = () => {
             <div class="border border-grey-400 border-2 border-solid flex justify-center items-center py-4">
               <div>
                 <h1 class="font-bold text-xl px-16">See Personalized Recommendations</h1>
-              
+                <NavLink to={"/sign-in"} end>
                 <button class="py-3 px-16 bg-orange-500 rounded-full my-3 mx-[120px]">
                   SignIn
                 </button>
+                </NavLink>
                 <p class="px-[120px]">New Customer? Start Here</p>
               </div>
               
