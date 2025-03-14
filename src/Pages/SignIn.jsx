@@ -46,6 +46,11 @@ const SignIn = () => {
               login
             </a>
           </button>
+          <button className="w-full border border-2 border-green-700 bg-green-700 text-white text-base py-1 mt-4 rounded-md text-center">
+            <a href="#">
+              Registration
+            </a>
+          </button>
         </div>
       
       </div>
