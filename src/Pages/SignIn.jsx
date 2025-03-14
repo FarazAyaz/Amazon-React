@@ -1,5 +1,6 @@
 import React from "react";
 import { FaUser } from "react-icons/fa";
+import { NavLink } from "react-router";
 const SignIn = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -46,11 +47,14 @@ const SignIn = () => {
               login
             </a>
           </button>
+          <NavLink to={"/sign-up"} end>
           <button className="w-full border border-2 border-green-700 bg-green-700 text-white text-base py-1 mt-4 rounded-md text-center">
             <a href="#">
               Registration
             </a>
           </button>
+          </NavLink>
+          
         </div>
       
       </div>

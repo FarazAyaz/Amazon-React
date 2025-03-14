@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaUser } from 'react-icons/fa';
 import { IoIosArrowDropdown } from "react-icons/io";
 import { NavLink } from 'react-router';
 
