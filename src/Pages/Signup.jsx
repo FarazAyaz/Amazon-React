@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaUser } from 'react-icons/fa'
+import { PiEyeClosedLight } from 'react-icons/pi'
+import { RxEyeOpen } from 'react-icons/rx'
 const Signup = () => {
+  const [showPassword,setShowPassword] = useState(false)
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
          <div className="w-96 bg-white p-8 rounded-lg shadow-lg">
@@ -24,12 +27,15 @@ const Signup = () => {
              <label htmlFor="create-Password" className="block text-base mb-2">
                Create Password
              </label>
-             <input
-               type="Password"
+            <div className='relative'>
+            <input
+               type= {showPassword ? 'text' : 'password'}
                id="create-password"
                className="w-full border text-base py-1 px-2 rounded-md focus:outline-none focus:ring-0 focus:border-gray-600"
                placeholder="Create Password"
              />
+             {showPassword ? <RxEyeOpen className='size-6 absolute right-4 top-[25%] cursor-pointer'onClick={()=>setShowPassword(!showPassword)}/> : <PiEyeClosedLight  className='w-6 h-6 absolute right-3 top-[25%] cursor-pointer' onClick={()=>setShowPassword(!showPassword)}/> }
+            </div>
            </div>
            <div className="mt-3">
              <label htmlFor="Confirm-Password" className="block text-base mb-2">
