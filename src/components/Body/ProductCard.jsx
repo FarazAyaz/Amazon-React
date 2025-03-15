@@ -1,28 +1,30 @@
-import React from 'react'
-
-
-
-const ProductCard = ({title,description,price,img}) => {
+const ProductCard = ({ title, description, price, img }) => {
   return (
-    <div className='bg-slate-100/30 shadow-md rounded-lg w-[350px] flex flex-col hover:shadow-xl transition duration-300 ease-in-out cursor-pointer'>
-        <div className='bg-white rounded-tl-lg rounded-tr-lg p-8'>
-        <img src={img} alt="" className='object-contain h-[200px] w-full rounded-tl-lg rounded-tr-lg'/>
+    <div className="bg-slate-100/30 shadow-md rounded-lg w-[350px] flex flex-col hover:shadow-xl transition duration-300 ease-in-out cursor-pointer">
+      <div className="bg-white rounded-tl-lg rounded-tr-lg p-8">
+        <img
+          src={img}
+          alt=""
+          className="object-contain h-[200px] w-full rounded-tl-lg rounded-tr-lg"
+        />
+      </div>
+      <div className="flex flex-col flex-1  justify-between p-4 space-y-1">
+        {/* rest of the section includes title desciption button */}
+        <div>
+          <div className="flex justify-between items-center gap-1">
+            <h1 className="font-bold line-clamp-1 ">{title}</h1>
+            <h3 className="font-bold text-green-600 ">${price}</h3>
+          </div>
+          {/* description */}
+          <h3 className="font-medium line-clamp-3">{description}</h3>
         </div>
-    <div className='flex flex-col flex-1  justify-between p-4 space-y-1'>
-    {/* rest of the section includes title desciption button */}
-    <div>
-    <div className='flex justify-between items-center gap-1'>
-    <h1 className='font-bold line-clamp-1 '>{title}</h1>
-    <h3 className='font-bold text-green-600 '>${price}</h3>
+        {/* add to cart button */}
+        <button className="font-bold bg-yellow-500 rounded-lg cursor-pointer w-full py-2 mt-8 ">
+          Add To Cart
+        </button>
+      </div>
     </div>
-    {/* description */}
-    <h3 className='font-medium line-clamp-3'>{description}</h3>
-    </div>
-    {/* add to cart button */}
-    <button className='font-bold bg-yellow-500 rounded-lg cursor-pointer w-full py-2 mt-8'>Add To Cart</button>
-    </div>
-    </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;
