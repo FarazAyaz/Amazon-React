@@ -65,7 +65,7 @@ const Signup = () => {
           </div>
         </div>
         <div className="mt-3">
-          <label htmlFor="Confirm-Password" className="block text-base mb-2">
+          <label htmlFor="Confirm-Password" className="block text-base mb-3">
             Confirm Password
           </label>
           <input
