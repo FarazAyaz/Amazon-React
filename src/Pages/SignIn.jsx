@@ -42,13 +42,13 @@ const SignIn = () => {
           </div>
         </div>
         <div className="mt-5">
-          <button className="w-full border border-2 border-indigo-700 bg-indigo-800 text-white text-base py-1 mt-4 rounded-md text-center">
+          <button className="w-full border-indigo-700 bg-indigo-800 text-white text-base py-1 mt-4 rounded-md text-center">
             <a href="#">
               login
             </a>
           </button>
           <NavLink to={"/sign-up"} end>
-          <button className="w-full border border-2 border-green-700 bg-green-700 text-white text-base py-1 mt-4 rounded-md text-center">
+          <button className="w-full  border-green-700 bg-green-700 text-white text-base py-1 mt-4 rounded-md text-center">
             <a href="#">
               Registration
             </a>
