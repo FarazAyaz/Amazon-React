@@ -5,11 +5,11 @@ const Footer = () => {
     <div>
       <div>
       <div class="bg-white w-full my-10 py-5">
-            <div class="border border-grey-400 border-2 border-solid flex justify-center items-center py-4">
+            <div class="border border-grey-400  border-solid flex justify-center items-center py-4">
               <div>
                 <h1 class="font-bold text-xl px-16">See Personalized Recommendations</h1>
                 <NavLink to={"/sign-in"} end>
-                <button class="py-3 px-16 bg-orange-500 rounded-full my-3 mx-[120px]">
+                <button class="py-3 px-16 bg-orange-400 rounded-full my-3 mx-[120px]">
                   SignIn
                 </button>
                 </NavLink>
