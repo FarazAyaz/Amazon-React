@@ -52,7 +52,7 @@ const Footer = () => {
               <h1 class="font-bold m-4 hover:font-bold hover:border hover:border-white  cursor-pointer">Amazon Payment Products</h1>   
               <div class="space-y-2">
                 <p>Amazon Business Card</p>
-              <p>Shop with Points</p>
+              <p>Shop with Point</p>
               <p>Reload Your Balance</p>
               <p>Amazon Currency Converter</p>
               </div>
