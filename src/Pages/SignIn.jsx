@@ -3,32 +3,29 @@ import { FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { PiEyeClosedLight } from "react-icons/pi";
 import { RxEyeOpen } from "react-icons/rx";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
+import { auth } from "../../Firebase"; 
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [showPassword1, setShowPassword1] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = getAuth();
-  const signIn = async (email,password) => {
-   try {
-    const response = await signInWithEmailAndPassword
-   (auth, email, password)
-   if (response.user){
-    toast.success("Registration Successful")
-   }
-  }
- 
-    
-   } catch (error) {
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
-   }
-  }
+  const navigate = useNavigate();
 
+  const signIn = async () => {
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      if (response.user) {
+        toast.success("Login successful");
+        navigate("/")
+      }
+    } catch (error) {
+      toast.error(error.message);
+      console.error(error);
+    }
+  };
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -44,11 +41,12 @@ const SignIn = () => {
             Email
           </label>
           <input
-            type="text"
+            type="email"
             id="Email"
             className="w-full border text-base py-1 px-2 rounded-md focus:outline-none focus:ring-0 focus:border-gray-600"
             placeholder="Enter Email"
             onChange={(event) => setEmail(event.target.value)}
+            value={email}
           />
         </div>
 
@@ -62,7 +60,8 @@ const SignIn = () => {
               id="password"
               className="w-full border text-base py-1 px-2 rounded-md focus:outline-none focus:ring-0 focus:border-gray-600"
               placeholder="Enter Password"
-              onChange={(event)=> setPassword(event.target.value)}
+              onChange={(event) => setPassword(event.target.value)}
+              value={password}
             />
             {showPassword1 ? (
               <RxEyeOpen
@@ -81,7 +80,7 @@ const SignIn = () => {
         <div className="flex mt-6 justify-between items-center">
           <div className="space-x-2">
             <input type="checkbox" name="checkbox" id="checkbox" />
-            <label>Remember Me</label>
+            <label htmlFor="checkbox">Remember Me</label>
           </div>
           <div>
             <a href="#" className="text-indigo-800 font-semibold">
@@ -91,7 +90,10 @@ const SignIn = () => {
         </div>
 
         <div className="mt-5">
-          <button className="w-full border-indigo-700 bg-indigo-800 text-white text-base py-1 mt-4 rounded-md text-center">
+          <button
+            className="w-full border-indigo-700 bg-indigo-800 text-white text-base py-1 mt-4 rounded-md text-center"
+            onClick={signIn} // Fixed: Added onClick to trigger sign-in
+          >
             Login
           </button>
 
@@ -107,4 +109,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
 
