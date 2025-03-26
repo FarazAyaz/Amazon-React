@@ -3,9 +3,32 @@ import { FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { PiEyeClosedLight } from "react-icons/pi";
 import { RxEyeOpen } from "react-icons/rx";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const [showPassword1, setShowPassword1] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const auth = getAuth();
+  const signIn = async (email,password) => {
+   try {
+    const response = await signInWithEmailAndPassword
+   (auth, email, password)
+   if (response.user){
+    toast.success("Registration Successful")
+   }
+  }
+ 
+    
+   } catch (error) {
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+   }
+  }
+
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -17,14 +40,15 @@ const SignIn = () => {
         <hr className="mt-3" />
 
         <div className="mt-3">
-          <label htmlFor="username" className="block text-base mb-2">
-            Username
+          <label htmlFor="Email" className="block text-base mb-2">
+            Email
           </label>
           <input
             type="text"
-            id="username"
+            id="Email"
             className="w-full border text-base py-1 px-2 rounded-md focus:outline-none focus:ring-0 focus:border-gray-600"
-            placeholder="Enter Username"
+            placeholder="Enter Email"
+            onChange={(event) => setEmail(event.target.value)}
           />
         </div>
 
@@ -38,6 +62,7 @@ const SignIn = () => {
               id="password"
               className="w-full border text-base py-1 px-2 rounded-md focus:outline-none focus:ring-0 focus:border-gray-600"
               placeholder="Enter Password"
+              onChange={(event)=> setPassword(event.target.value)}
             />
             {showPassword1 ? (
               <RxEyeOpen

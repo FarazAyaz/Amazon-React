@@ -4,17 +4,42 @@ import { PiEyeClosedLight } from "react-icons/pi";
 import { RxEyeOpen } from "react-icons/rx";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../Firebase";
+import { toast } from "react-toastify";
+import { redirect, Router, useNavigate } from "react-router";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
   const signUp = async (email, password) => {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+    try {
+      // 1-> Check if password and confirm password are same
+
+      if (password !== confirmPassword) {
+        toast.error("Password and Confirm Password do not match");
+        return;
+      }
+
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      if (response.user) {
+        toast.success("Registration Successfull");
+        navigate("/");
+      }
+      // console.log("user credentials", userCredential.user);
+      // if (userCredential.user) {
+      //   toast.success("User Created Successfully");
+      //   redirect("/");
+      // }
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error);
+    }
   };
 
   return (
@@ -33,7 +58,7 @@ const Signup = () => {
             type="text"
             id="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
             className="w-full border text-base py-1 px-2 rounded-md focus:outline-none focus:ring-0 focus:border-gray-600"
             placeholder="Enter Email Address"
           />
@@ -73,6 +98,7 @@ const Signup = () => {
             id="confirm-password"
             className="w-full border text-base py-1 px-2 rounded-md focus:outline-none focus:ring-0 focus:border-gray-600"
             placeholder="Confirm Password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
         <div className="mt-5">
