@@ -99,7 +99,7 @@ const SignIn = () => {
 
           <NavLink to={"/sign-up"}>
             <button className="w-full border-green-700 bg-green-700 text-white text-base py-1 mt-4 rounded-md text-center">
-              Registration
+              SIGN UP HERE 
             </button>
           </NavLink>
         </div>
